@@ -1,6 +1,5 @@
 import QtQuick 2.3
 import QtQuick.Controls 2.3
-import QtQuick.Controls.Material 2.3
 import QtGraphicalEffects 1.12
 
 Button {
@@ -8,11 +7,11 @@ Button {
     width: 100
     height: 40
     visible: true
-    palette {
+    palette {   // Overriding Controls default palette
         button: "transparent"
     }
 
-    property alias buttonText : btnText.text
+    property alias buttonText : btnText.text    // Aliasing button's text for direct accessing
 
     states: [
             State {
@@ -36,7 +35,7 @@ Button {
         }
 
 
-
+    // Text is separated from parent Button and the Indicator Rectangle
     Text {
         id: btnText
         anchors.verticalCenter: parent.verticalCenter
@@ -45,6 +44,7 @@ Button {
         font.pixelSize: 16
     }
 
+    // Indicator
     Rectangle {
         id: btnRect
         width: 10
@@ -53,6 +53,7 @@ Button {
         color: "red"
     }
 
+    // Events Listener
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true

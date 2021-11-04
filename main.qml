@@ -9,7 +9,7 @@ Window {
     height: 480
     visible: true
     title: qsTr("QML Task")
-    TaskButton {
+    TaskButton {    // Custom Button
         x: 32
         y: 261
         buttonText: "Play"
